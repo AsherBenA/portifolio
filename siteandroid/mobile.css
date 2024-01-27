@@ -39,7 +39,9 @@
     }
     .img_p{
         width: 250px;
-        padding: 20px;
+        padding: 25px;
+        border-radius: 50px;
+        box-shadow: box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
     }
     .img_g{
         display: none;
@@ -52,6 +54,7 @@
         padding-left: 15px;
         width: 250px;
         height: 120px;
+        border-radius: 20px;
     }
 
     #menu_versoes {
