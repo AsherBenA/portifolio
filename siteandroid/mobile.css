@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 @media screen and (max-width: 720px) {
-    li {
+    #menu li {
         display: block;
         background-color:#1E441E;
         padding: 2px;   
@@ -19,7 +19,7 @@
         font-size: 32px;
     }
     header {
-        height: 200px;
+        height: 100px;
         position: fixed;
         margin-top:0px;
         display: block;
@@ -27,7 +27,7 @@
        left: 0px;
     }
     main {
-        margin-top: 300px;
+        margin-top: 170px;
         max-width: 450px;
         display: block;
         text-align: justify;
@@ -37,8 +37,12 @@
         margin-left: 20px;
         margin-right: 20px;
     }
-    #antdroid{
-        max-width: 300px;
+    .img_p{
+        max-width: 400px;
+        margin:10px;
+    }
+    .img_g{
+        display: none;
     }
     #novdroid{
         display: none;
@@ -46,8 +50,13 @@
     #videodroid{
         padding-top: 20px;
         padding-left: 50px;
-        max-width: 200px;
-        max-height: 150px;
+        max-width: 350px;
+        max-height: 250px;
+    }
+
+    #menu_versoes {
+        margin: 20px;
+        margin-left:50px ;
     }
     
 }
