@@ -4,4 +4,4 @@ Leia aqui
 
  <a href="https://asherbena.github.io/portifolio/siteandroid/index.html">Android</a>
 
- <a href="https://asherbena.github.io/portifolio/Randomizador/index.html">RPG</a>
+ <a href="https://asherbena.github.io/portifolio/Randomizador/html/index.html">RPG</a>
