@@ -38,17 +38,17 @@
         margin-right: 20px;
     }
     #antdroid{
-        max-width: 500px;
+        max-width: 200px;
     }
     #novdroid{
-        max-width: 500px;
+        max-width: 200px;
 
     }
     #videodroid{
         padding-top: 20px;
         padding-left: 50px;
-        max-width: 500px;
-        max-height: 250px;
+        max-width: 200px;
+        max-height: 150px;
     }
     
 }
