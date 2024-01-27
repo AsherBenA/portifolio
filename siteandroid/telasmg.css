@@ -28,7 +28,7 @@
     }
     main {
         margin-top: 170px;
-        max-width: 450px;
+        max-width: 600px;
         display: block;
         text-align: justify;
         padding: 20px;
@@ -38,7 +38,8 @@
         margin-right: 20px;
     }
     .img_p {
-        width: 250px;
+        min-width: 250px;
+        max-width: 450px
         padding: 25px;
         border-radius: 50px;
         box-shadow:5px 5px 5px 5px rgba(0, 0, 0, 0.2);
