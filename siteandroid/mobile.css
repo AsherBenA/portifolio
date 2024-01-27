@@ -22,9 +22,22 @@
         height: 200px;
         position: fixed;
         margin-top:0px;
+        display: block;
+        top: 0px;
+       left: 0px;
     }
     main {
-        margin-top: 220px;
+        margin-top: 300px;
+        max-width: 450px;
+        display: block;
+        text-align: justify;
+        padding: 20px;
+        text-indent: 2px;
+        background-color: rgba(0, 0, 0, 0.144);
+        margin-left: 20px;
+        margin-right: 20px;
+       
+
     }
     
 }
