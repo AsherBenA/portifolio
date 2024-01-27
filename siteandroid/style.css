@@ -10,7 +10,6 @@
 /*cabeçalho: header e nav*/
 header {
     text-align: center;
-    height: 300px;
     width: 100%;
     background-image: linear-gradient(to bottom, #1E441E,  #119822);
     border-bottom-left-radius: 10px;
@@ -20,8 +19,6 @@ header {
 header h1 {
     padding-top: 50px;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 45px;
-
 }
 
 header p {
@@ -33,12 +30,6 @@ header nav{
     padding-top: 40px;
 }
 
-.nave {
-    padding-left: 20px;
-    padding-right: 20px;
-    text-decoration: none;
-    color: black
-}
 /*.nave:hover{
     color: white;
     background-color: #2A7221;
@@ -48,12 +39,12 @@ header nav{
 
 /*conteudo principal*/
 
-main {
+/*main {
     max-width: 800px;
     min-width: 400px;
     text-align: justify;
     margin: auto;
-}
+}*/
 
 
 
