@@ -1,0 +1,59 @@
+@charset "pt-br";
+body, html{
+    margin: 0;
+    height: 100%;
+    color: #777;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.conteudo {
+    padding: 50px 80px;
+    text-align: justify;
+}
+
+h3{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*EFEITO PARALLAX*/
+.cx1, .cx2, .cx3, .cx4{
+    position: relative;
+    height: 100%;
+    opacity: 0.6;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+
+.cx1{
+    background-image: url(imagens/imagem1.jpg);  
+}
+.cx2{
+    background-image: url(imagens/imagem2.jpg);
+}
+.cx3{
+    background-image: url(imagens/imagem3.jpg);
+}
+.cx4{
+    background-image: url(imagens/imagem4.jpg);
+}
+
+.cont-titulo{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    
+}
+
+.cont-titulo span.titulo{
+    background-color: #111;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 5px;
+    color: white;
+    text-transform: uppercase;
+}
