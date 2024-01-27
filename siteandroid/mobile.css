@@ -39,7 +39,7 @@
     }
     .img_p{
         width: 250px;
-        margin:2px;
+        padding: 20px;
     }
     .img_g{
         display: none;
@@ -49,8 +49,9 @@
     }
     #videodroid{
         padding-top: 20px;
-        padding-left: 20px;
+        padding-left: 15px;
         width: 250px;
+        height: 120px;
     }
 
     #menu_versoes {
