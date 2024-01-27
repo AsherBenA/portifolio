@@ -39,16 +39,16 @@
     }
     #antdroid{
         max-width: 500px;
-        min-width:400px ;
     }
     #novdroid{
         max-width: 500px;
-        min-width:400px ;
 
     }
     #videodroid{
+        padding-top: 20px;
+        padding-left: 50px;
         max-width: 500px;
-        min-width:400px ;
+        max-height: 250px;
     }
     
 }
