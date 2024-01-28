@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minha Lista de Tarefas</title>
-  <!-- Adicione as bibliotecas do Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js"></script>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -105,34 +102,7 @@
   <button onclick="addTask()">Adicionar Tarefa</button>
 </div>
 
-<!-- Configuração do Firebase -->
 <script>
-  // Substitua estas configurações com as configurações do seu projeto Firebase
-  // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-var firebaseConfig = {
-  apiKey: "AIzaSyDB5mC1kii0jUET0psM9LTuzozNFXdBu4M",
-  authDomain: "too-doo-7dda1.firebaseapp.com",
-  projectId: "too-doo-7dda1",
-  storageBucket: "too-doo-7dda1.appspot.com",
-  messagingSenderId: "477581147786",
-  appId: "1:477581147786:web:b6eb3a0cade7dc74c13773",
-  measurementId: "G-J7R8TQ1RZ8"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-  // Inicialize o Firebase
-  firebase.initializeApp(firebaseConfig);
-
   function addTask() {
     var taskInput = document.getElementById("new-task");
     var taskText = taskInput.value.trim();
@@ -160,20 +130,6 @@ const analytics = getAnalytics(app);
       taskItem.appendChild(deleteButton);
 
       todoList.appendChild(taskItem);
-
-      
-      checkbox.addEventListener('change', function () {
-        if (checkbox.checked) {
-         
-          var database = firebase.database();
-          database.ref('tarefas-concluidas').push({
-            texto: taskText,
-            dataConclusao: new Date().toISOString()
-          });
-
-          todoList.removeChild(taskItem);
-        }
-      });
 
       taskInput.value = "";
     }
