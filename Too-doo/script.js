@@ -1,57 +1,74 @@
-class TodoApp {
-  constructor() {
-    this.tasks = [];
-    this.todoList = document.getElementById("todo-list");
-    this.newTaskInput = document.getElementById("new-task");
-    this.addTaskButton = document.getElementById("add-task");
-    this.markCompletedButton = document.getElementById("mark-completed");
+// Variável global para armazenar as tarefas
+let tasks = [];
 
-    this.addTaskButton.addEventListener("click", this.addTask.bind(this));
-    this.markCompletedButton.addEventListener("click", this.markAllCompleted.bind(this));
+// Função para adicionar uma nova tarefa
+function addTask() {
+  const taskInput = document.getElementById("new-task");
+  const taskText = taskInput.value.trim();
 
-    this.renderTasks();
-  }
+  if (taskText !== "") {
+    // Cria um objeto de tarefa
+    const task = {
+      id: Date.now(), // ID único baseado no timestamp atual
+      text: taskText,
+      completed: false
+    };
 
-  addTask() {
-    const taskText = this.newTaskInput.value.trim();
-    if (taskText !== "") {
-      const task = {
-        id: Date.now(),
-        text: taskText,
-        completed: false
-      };
-      this.tasks.push(task);
-      this.renderTasks();
-      this.newTaskInput.value = "";
-    }
-  }
+    // Adiciona a tarefa ao array
+    tasks.push(task);
 
-  markAllCompleted() {
-    this.tasks.forEach(task => task.completed = true);
-    this.renderTasks();
-  }
+    // Atualiza a lista de tarefas no HTML
+    renderTasks();
 
-  renderTasks() {
-    this.todoList.innerHTML = "";
-    this.tasks.forEach(task => {
-      const taskItem = document.createElement("li");
-      taskItem.className = "task";
-      taskItem.innerHTML = `
-        <input type="checkbox" ${task.completed ? 'checked' : ''}>
-        <span>${task.text}</span>
-        <button class="btn-delete-task">Excluir</button>
-      `;
-      taskItem.querySelector("input").addEventListener("change", () => {
-        task.completed = !task.completed;
-        this.renderTasks();
-      });
-      taskItem.querySelector(".btn-delete-task").addEventListener("click", () => {
-        this.tasks = this.tasks.filter(t => t.id !== task.id);
-        this.renderTasks();
-      });
-      this.todoList.appendChild(taskItem);
-    });
+    // Limpa o input
+    taskInput.value = "";
   }
 }
 
-const app = new TodoApp();
+// Função para marcar todas as tarefas como concluídas
+function marcarConcluidas() {
+  tasks.forEach(task => {
+    task.completed = true;
+  });
+
+  renderTasks();
+}
+
+// Função para renderizar a lista de tarefas no HTML
+function renderTasks() {
+  const todoList = document.getElementById("todo-list");
+  todoList.innerHTML = ""; // Limpa a lista atual
+
+  tasks.forEach(task => {
+    const taskItem = document.createElement("li");
+    taskItem.className = "task";
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = task.completed;
+    checkbox.addEventListener("change", function() {
+      task.completed = this.checked;
+      renderTasks(); // Atualiza a lista ao marcar/desmarcar a checkbox
+    });
+
+    const taskLabel = document.createElement("span");
+    taskLabel.textContent = task.text;
+    taskLabel.style.textDecoration = task.completed ? "line-through" : "none";
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Excluir";
+    deleteButton.onclick = function() {
+      tasks = tasks.filter(t => t.id !== task.id); // Remove a tarefa do array
+      renderTasks(); // Atualiza a lista após a exclusão
+    };
+
+    taskItem.appendChild(checkbox);
+    taskItem.appendChild(taskLabel);
+    taskItem.appendChild(deleteButton);
+
+    todoList.appendChild(taskItem);
+  });
+}
+
+// Inicializa a lista de tarefas vazia ao carregar a página
+renderTasks();
