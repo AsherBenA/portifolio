@@ -1,26 +1,98 @@
+/* Reset de estilos básicos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo global */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
     margin: 0;
 }
 
 .container {
+    max-width: 800px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
     text-align: center;
+    margin-bottom: 30px;
+    color: #333333;
 }
 
 button {
-    padding: 10px;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 15px;
+    padding: 12px 24px;
     font-size: 16px;
-    margin-bottom: 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-#personagem-container {
-    border: 1px solid #ccc;
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+#personagem1-container,
+#personagem2-container {
+    margin-top: 30px;
     padding: 20px;
-    max-width: 400px;
-    margin: 0 auto;
+    background-color: #f9f9f9;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+}
+
+#personagem1-container {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.4); /* Aura azul para o personagem 1 */
+}
+
+#personagem2-container {
+    border-color: #28a745;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.4); /* Aura verde para o personagem 2 */
+}
+
+.personagem-details {
+    margin-bottom: 15px;
+}
+
+#resultado-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #personagem1-container,
+    #personagem2-container {
+        padding: 15px;
+    }
 }
